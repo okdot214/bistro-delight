@@ -240,9 +240,9 @@ export const translations = {
 type DeepWiden<T> = T extends string
   ? string
   : T extends readonly (infer U)[]
-    ? DeepWiden<U>[]
+    ? readonly DeepWiden<U>[]
     : T extends object
-      ? { [K in keyof T]: DeepWiden<T[K]> }
+      ? { readonly [K in keyof T]: DeepWiden<T[K]> }
       : T;
 
 export type Dict = DeepWiden<typeof translations.it>;
