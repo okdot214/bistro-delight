@@ -2,18 +2,23 @@ import { useEffect, useRef, useState } from "react";
 import aperitivi from "@/assets/specialty-aperitivi.jpg";
 import pranzi from "@/assets/specialty-pranzi.jpg";
 import caffe from "@/assets/specialty-caffetteria.jpg";
+import { useLanguage } from "@/lib/i18n";
 
-const items = [
-  { img: aperitivi, kicker: "01", title: "Aperitivi", text: "Spritz, vini selezionati e taglieri da condividere all'ora del tramonto." },
-  { img: pranzi, kicker: "02", title: "Pranzi Veloci", text: "Un menù che cambia ogni giorno, con ingredienti freschi di stagione." },
-  { img: caffe, kicker: "03", title: "Caffetteria", text: "Espresso, cappuccini e pasticceria mignon per iniziare la giornata." },
-];
+const images = [aperitivi, pranzi, caffe];
 
 export function HorizontalSpecialties() {
   const stickyRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [tx, setTx] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const { t } = useLanguage();
+
+  const items = t.specialties.items.map((it, i) => ({
+    img: images[i],
+    kicker: `0${i + 1}`,
+    title: it.title,
+    text: it.text,
+  }));
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
@@ -49,14 +54,13 @@ export function HorizontalSpecialties() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-10">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-gold uppercase tracking-[0.3em] text-xs mb-3">Le nostre specialità</div>
+            <div className="text-gold uppercase tracking-[0.3em] text-xs mb-3">{t.specialties.kicker}</div>
             <h2 className="font-display text-4xl md:text-6xl text-foreground max-w-2xl text-balance">
-              Tre momenti, <span className="italic">una sola passione</span>.
+              {t.specialties.title} <span className="italic">{t.specialties.titleItalic}</span>
             </h2>
           </div>
           <p className="max-w-sm text-muted-foreground text-pretty">
-            Dal primo caffè della giornata all'aperitivo serale, Gambrinus
-            accompagna i ritmi di Bolzano con cura artigianale.
+            {t.specialties.lead}
           </p>
         </div>
       </div>

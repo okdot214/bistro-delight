@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      catering_requests: {
+        Row: {
+          created_at: string
+          email: string
+          event_date: string
+          expires_at: string
+          guests: number | null
+          id: string
+          name: string
+          requests: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          event_date: string
+          expires_at?: string
+          guests?: number | null
+          id?: string
+          name: string
+          requests?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          event_date?: string
+          expires_at?: string
+          guests?: number | null
+          id?: string
+          name?: string
+          requests?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       daily_menu_items: {
         Row: {
           created_at: string

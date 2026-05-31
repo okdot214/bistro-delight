@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-bistro.jpg";
+import { useLanguage } from "@/lib/i18n";
 
 export function ParallaxHero() {
   const ref = useRef<HTMLDivElement>(null);
   const [y, setY] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     let raf = 0;
@@ -37,24 +39,23 @@ export function ParallaxHero() {
         style={{ transform: `translate3d(0, ${y * 0.15}px, 0)`, opacity: Math.max(0, 1 - y / 600) }}
       >
         <span className="text-gold uppercase tracking-[0.35em] text-xs md:text-sm mb-6 animate-fade-in">
-          Bolzano · dal 1970
+          {t.hero.kicker}
         </span>
         <h1 className="font-display text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] max-w-5xl text-balance animate-fade-up">
-          Bistro Gambrinus
+          {t.hero.title}
           <span className="block mt-2 italic text-gold/95 text-3xl sm:text-4xl md:text-5xl">
-            Il tuo momento di gusto
+            {t.hero.subtitle}
           </span>
         </h1>
         <p className="mt-8 text-white/80 max-w-xl text-base md:text-lg leading-relaxed animate-fade-up" style={{ animationDelay: "120ms" }}>
-          Caffetteria, pranzi veloci, aperitivi e pasticceria artigianale —
-          nel cuore di Bolzano.
+          {t.hero.lead}
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center animate-fade-up" style={{ animationDelay: "240ms" }}>
           <a href="#menu-giorno" className="px-7 py-3.5 rounded-full bg-gold text-gold-foreground font-semibold text-sm tracking-wide hover:opacity-90 transition">
-            Menù del giorno
+            {t.hero.ctaMenu}
           </a>
           <a href="/catering" className="px-7 py-3.5 rounded-full border border-white/40 text-white font-semibold text-sm tracking-wide hover:bg-white/10 transition">
-            Richiedi preventivo
+            {t.hero.ctaQuote}
           </a>
         </div>
       </div>

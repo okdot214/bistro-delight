@@ -1,17 +1,21 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const nav = [
-  { to: "/", label: "Home" },
-  { to: "/catering", label: "Catering & Eventi" },
-  { to: "/pasticceria", label: "Pasticceria" },
-];
+import { useLanguage } from "@/lib/i18n";
+import { LanguageSwitcher } from "./language-switcher";
+import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (r) => r.location.pathname });
+  const { t } = useLanguage();
+
+  const nav = [
+    { to: "/", label: t.nav.home },
+    { to: "/catering", label: t.nav.catering },
+    { to: "/pasticceria", label: t.nav.pasticceria },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,6 +30,7 @@ export function SiteHeader() {
   const transparent = onHome && !scrolled;
 
   return (
+    <>
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         transparent
@@ -44,7 +49,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           {nav.map((n) => {
             const active = pathname === n.to;
             return (
@@ -61,6 +66,7 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <LanguageSwitcher variant={transparent ? "light" : "dark"} />
           <a
             href="tel:+390471283242"
             className="text-sm font-semibold px-5 py-2 rounded-full bg-gold text-gold-foreground hover:opacity-90 transition"
@@ -77,28 +83,8 @@ export function SiteHeader() {
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
-
-      {open && (
-        <div className="md:hidden border-t border-border bg-background animate-fade-in">
-          <nav className="px-6 py-6 flex flex-col gap-5">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="text-base uppercase tracking-wide font-medium text-foreground/80"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <a
-              href="tel:+390471283242"
-              className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full bg-gold text-gold-foreground font-semibold"
-            >
-              Chiama 0471 283242
-            </a>
-          </nav>
-        </div>
-      )}
     </header>
+    <MobileMenu open={open} onClose={() => setOpen(false)} />
+    </>
   );
 }
