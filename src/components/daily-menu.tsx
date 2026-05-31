@@ -4,10 +4,12 @@ import { useServerFn } from "@tanstack/react-start";
 import { listMenuItems } from "@/lib/menu.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { UtensilsCrossed } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export function DailyMenu() {
   const fetchMenu = useServerFn(listMenuItems);
   const qc = useQueryClient();
+  const { t } = useLanguage();
   const { data, isLoading } = useQuery({
     queryKey: ["menu-items"],
     queryFn: () => fetchMenu(),
@@ -27,20 +29,20 @@ export function DailyMenu() {
     <section id="menu-giorno" className="relative bg-secondary/60 py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto">
-          <div className="text-gold uppercase tracking-[0.3em] text-xs mb-4">Menù del Giorno</div>
+          <div className="text-gold uppercase tracking-[0.3em] text-xs mb-4">{t.menu.kicker}</div>
           <h2 className="font-display text-4xl md:text-5xl text-foreground text-balance">
-            Ogni giorno un menù diverso<br />
-            <span className="italic">ed ingredienti freschi!</span>
+            {t.menu.title}<br />
+            <span className="italic">{t.menu.titleItalic}</span>
           </h2>
           <div className="gold-rule w-32 mx-auto mt-8" />
         </div>
 
         <div className="mt-14 bg-card rounded-2xl shadow-[0_30px_80px_-30px_rgba(60,30,10,0.25)] border border-border/60 overflow-hidden">
           {isLoading ? (
-            <div className="p-12 text-center text-muted-foreground">Caricamento…</div>
+            <div className="p-12 text-center text-muted-foreground">{t.menu.loading}</div>
           ) : !data || data.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground">
-              Il menù di oggi sarà disponibile a breve.
+              {t.menu.empty}
             </div>
           ) : (
             <ul className="divide-y divide-border">
