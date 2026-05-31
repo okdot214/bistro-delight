@@ -237,4 +237,12 @@ export const translations = {
   },
 } as const;
 
-export type Dict = typeof translations.it;
+type DeepWiden<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? DeepWiden<U>[]
+    : T extends object
+      ? { [K in keyof T]: DeepWiden<T[K]> }
+      : T;
+
+export type Dict = DeepWiden<typeof translations.it>;
