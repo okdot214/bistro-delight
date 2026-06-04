@@ -1,10 +1,15 @@
-export type Lang = "it" | "en";
+export type Lang = "it" | "de";
 
 export const translations = {
   it: {
-    nav: { home: "Home", catering: "Catering & Eventi", pasticceria: "Pasticceria", call: "Chiama" },
+    nav: {
+      home: "Home",
+      catering: "Catering & Eventi",
+      pasticceria: "Pasticceria",
+      call: "Chiama",
+    },
     hero: {
-      kicker: "Bolzano · dal 1970",
+      kicker: "Bolzano",
       title: "Bistro Gambrinus",
       subtitle: "Il tuo momento di gusto",
       lead: "Caffetteria, pranzi veloci, aperitivi e pasticceria artigianale — nel cuore di Bolzano.",
@@ -22,9 +27,18 @@ export const translations = {
       titleItalic: "una sola passione.",
       lead: "Dal primo caffè della giornata all'aperitivo serale, Gambrinus accompagna i ritmi di Bolzano con cura artigianale.",
       items: [
-        { title: "Aperitivi", text: "Spritz, vini selezionati e taglieri da condividere all'ora del tramonto." },
-        { title: "Pranzi Veloci", text: "Un menù che cambia ogni giorno, con ingredienti freschi di stagione." },
-        { title: "Caffetteria", text: "Espresso, cappuccini e pasticceria mignon per iniziare la giornata." },
+        {
+          title: "Aperitivi",
+          text: "Spritz, vini selezionati e taglieri da condividere all'ora del tramonto.",
+        },
+        {
+          title: "Pranzi Veloci",
+          text: "Un menù che cambia ogni giorno, con ingredienti freschi di stagione.",
+        },
+        {
+          title: "Caffetteria",
+          text: "Espresso, cappuccini e pasticceria mignon per iniziare la giornata.",
+        },
       ],
     },
     menu: {
@@ -42,7 +56,8 @@ export const translations = {
       hoursLines: ["Lun – Ven · 07:30 – 20:00", "Sab · 07:30 – 13:15", "Dom · Chiuso"],
     },
     footer: {
-      tagline: "Il tuo momento di gusto a Bolzano. Caffetteria, pranzi veloci, aperitivi e pasticceria artigianale dal cuore della città.",
+      tagline:
+        "Il tuo momento di gusto a Bolzano. Caffetteria, pranzi veloci, aperitivi e pasticceria artigianale dal cuore della città.",
       followFb: "Seguici su Facebook",
       contacts: "Contatti",
       hours: "Orari",
@@ -53,9 +68,18 @@ export const translations = {
       title1: "Cene a richiesta,",
       title2: "eventi indimenticabili.",
       services: [
-        { title: "Cene private a richiesta", text: "Menù degustazione su misura per serate intime, riservate o di rappresentanza." },
-        { title: "Compleanni & Feste", text: "Torte personalizzate, buffet e servizio dedicato per festeggiare in grande." },
-        { title: "Feste di laurea & Eventi", text: "Allestimenti curati, aperitivi e cene per celebrare i traguardi più importanti." },
+        {
+          title: "Cene private a richiesta",
+          text: "Menù degustazione su misura per serate intime, riservate o di rappresentanza.",
+        },
+        {
+          title: "Compleanni & Feste",
+          text: "Torte personalizzate, buffet e servizio dedicato per festeggiare in grande.",
+        },
+        {
+          title: "Feste di laurea & Eventi",
+          text: "Allestimenti curati, aperitivi e cene per celebrare i traguardi più importanti.",
+        },
       ],
       form: {
         kicker: "Richiedi un preventivo",
@@ -96,7 +120,8 @@ export const translations = {
       menuTitle: "Menù del giorno",
       menuLead: "Aggiungi, modifica o rimuovi i piatti. Le modifiche sono immediate.",
       requestsTitle: "Richieste catering",
-      requestsLead: "Messaggi ricevuti dal modulo Catering & Eventi. Vengono eliminati automaticamente dopo 3 mesi.",
+      requestsLead:
+        "Messaggi ricevuti dal modulo Catering & Eventi. Vengono eliminati automaticamente dopo 3 mesi.",
       requestsEmpty: "Nessuna richiesta al momento.",
       logout: "Esci",
       addDish: "Aggiungi piatto",
@@ -118,121 +143,146 @@ export const translations = {
       days: "giorni",
     },
   },
-  en: {
-    nav: { home: "Home", catering: "Catering & Events", pasticceria: "Bakery", call: "Call" },
+  de: {
+    nav: {
+      home: "Home",
+      catering: "Catering & Events",
+      pasticceria: "Konditorei",
+      call: "Anrufen",
+    },
     hero: {
-      kicker: "Bolzano · since 1970",
+      kicker: "Bozen",
       title: "Bistro Gambrinus",
-      subtitle: "Your taste moment",
-      lead: "Coffee bar, quick lunches, aperitifs and artisan pastries — in the heart of Bolzano.",
-      ctaMenu: "Today's menu",
-      ctaQuote: "Request a quote",
+      subtitle: "Dein Genussmoment",
+      lead: "Kaffeebar, schnelles Mittagessen, Aperitifs und handwerkliche Konditorei — im Herzen von Bozen.",
+      ctaMenu: "Heutiges Menü",
+      ctaQuote: "Angebot anfordern",
     },
     intro: {
-      kicker: "Welcome",
-      body: "A place where time slows down, coffee is a small ceremony, and every dish tells the story of seasonal ingredients.",
-      bodyItalic: "time slows down",
+      kicker: "Willkommen",
+      body: "Ein Ort, an dem die Zeit langsamer vergeht, Kaffee ein kleines Ritual ist und jedes Gericht die Geschichte saisonaler Zutaten erzählt.",
+      bodyItalic: "die Zeit langsamer vergeht",
     },
     specialties: {
-      kicker: "Our specialties",
-      title: "Three moments,",
-      titleItalic: "one single passion.",
-      lead: "From the first coffee of the day to the evening aperitif, Gambrinus follows Bolzano's rhythms with artisan care.",
+      kicker: "Unsere Spezialitäten",
+      title: "Drei Momente,",
+      titleItalic: "eine einzige Leidenschaft.",
+      lead: "Vom ersten Kaffee des Tages bis zum abendlichen Aperitif begleitet das Gambrinus den Rhythmus Bozens mit handwerklicher Sorgfalt.",
       items: [
-        { title: "Aperitifs", text: "Spritz, selected wines and sharing boards at sunset." },
-        { title: "Quick Lunches", text: "A menu that changes daily, with fresh seasonal ingredients." },
-        { title: "Coffee Bar", text: "Espresso, cappuccinos and mignon pastries to start the day." },
+        {
+          title: "Aperitifs",
+          text: "Spritz, ausgewählte Weine und Genussplatten zum Sonnenuntergang.",
+        },
+        {
+          title: "Schnelles Mittagessen",
+          text: "Ein täglich wechselndes Menü mit frischen, saisonalen Zutaten.",
+        },
+        {
+          title: "Kaffeebar",
+          text: "Espresso, Cappuccino und Mignon-Gebäck für den perfekten Start in den Tag.",
+        },
       ],
     },
     menu: {
-      kicker: "Today's Menu",
-      title: "A different menu every day",
-      titleItalic: "with fresh ingredients!",
-      loading: "Loading…",
-      empty: "Today's menu will be available shortly.",
+      kicker: "Heutiges Menü",
+      title: "Jeden Tag ein anderes Menü",
+      titleItalic: "mit frischen Zutaten!",
+      loading: "Wird geladen…",
+      empty: "Das heutige Menü ist in Kürze verfügbar.",
     },
     info: {
-      where: "Where we are",
-      phone: "Phone",
-      hours: "Hours",
-      callNow: "Call now",
-      hoursLines: ["Mon – Fri · 7:30 AM – 8:00 PM", "Sat · 7:30 AM – 1:15 PM", "Sun · Closed"],
+      where: "Wo wir sind",
+      phone: "Telefon",
+      hours: "Öffnungszeiten",
+      callNow: "Jetzt anrufen",
+      hoursLines: ["Mo – Fr · 7:30 – 20:00 Uhr", "Sa · 7:30 – 13:15 Uhr", "So · Geschlossen"],
     },
     footer: {
-      tagline: "Your taste moment in Bolzano. Coffee bar, quick lunches, aperitifs and artisan pastries from the heart of the city.",
-      followFb: "Follow us on Facebook",
-      contacts: "Contacts",
-      hours: "Hours",
-      reserved: "Staff area",
+      tagline:
+        "Dein Genussmoment in Bozen. Kaffeebar, schnelles Mittagessen, Aperitifs und handwerkliche Konditorei im Herzen der Stadt.",
+      followFb: "Folge uns auf Facebook",
+      contacts: "Kontakte",
+      hours: "Öffnungszeiten",
+      reserved: "Mitarbeiterbereich",
     },
     catering: {
       kicker: "Catering & Events",
-      title1: "Dinners on request,",
-      title2: "unforgettable events.",
+      title1: "Abendessen auf Anfrage,",
+      title2: "unvergessliche Events.",
       services: [
-        { title: "Private dinners on request", text: "Tasting menus tailored for intimate, private or corporate evenings." },
-        { title: "Birthdays & Parties", text: "Custom cakes, buffets and dedicated service to celebrate in style." },
-        { title: "Graduations & Events", text: "Refined setups, aperitifs and dinners to celebrate the most important milestones." },
+        {
+          title: "Private Abendessen auf Anfrage",
+          text: "Individuelle Degustationsmenüs für exklusive private oder geschäftliche Abende.",
+        },
+        {
+          title: "Geburtstage & Feiern",
+          text: "Maßgeschneiderte Torten, Buffets und erstklassiger Service, um stilvoll zu feiern.",
+        },
+        {
+          title: "Sponsionen & Events",
+          text: "Elegante Dekoration, Aperitifs und Abendessen, um die wichtigsten Meilensteine zu zelebrieren.",
+        },
       ],
       form: {
-        kicker: "Request a quote",
-        title: "Tell us about your event",
-        lead: "Reply within 24 business hours.",
-        name: "Full name *",
-        email: "Email *",
-        date: "Event date *",
-        guests: "Number of guests",
-        requests: "Special requests",
-        submit: "Send request",
-        submitting: "Sending…",
-        success: "Request sent! We'll contact you soon.",
-        errorRequired: "Please fill in the required fields",
+        kicker: "Angebot anfordern",
+        title: "Erzähle uns von deinem Event",
+        lead: "Antwort innerhalb von 24 Werktstunden.",
+        name: "Vollständiger Name *",
+        email: "E-Mail *",
+        date: "Event-Datum *",
+        guests: "Anzahl der Gäste",
+        requests: "Besondere Wünsche",
+        submit: "Anfrage senden",
+        submitting: "Wird gesendet…",
+        success: "Anfrage gesendet! Wir werden dich in Kürze kontaktieren.",
+        errorRequired: "Bitte fülle die Pflichtfelder aus",
       },
     },
     pasticceria: {
-      kicker: "Pastry & Bakery",
-      title1: "Sweet,",
-      title2: "artisan.",
-      lead: "Cakes to order, fresh pastries every morning, creations for every occasion.",
+      kicker: "Konditorei & Backwaren",
+      title1: "Süß,",
+      title2: "handgemacht.",
+      lead: "Torten auf Bestellung, frisches Gebäck jeden Morgen, Kreationen für jeden Anlass.",
       gallery: [
-        { title: "Signature cakes" },
-        { title: "Mignon pastries" },
-        { title: "Creations for ceremonies" },
+        { title: "Spezialtorten" },
+        { title: "Mignon-Gebäck" },
+        { title: "Kreationen für Feierlichkeiten" },
       ],
-      ctaTitle: "A custom cake?",
-      ctaLead: "Call us or come visit to design your creation together.",
+      ctaTitle: "Eine individuelle Torte?",
+      ctaLead: "Rufe uns an oder besuche uns, um deine Kreation gemeinsam zu planen.",
     },
     mobileMenu: {
-      address: "Viale Duca d'Aosta, Bolzano",
-      hoursShort: "Mon–Fri 7:30–20:00 · Sat 7:30–13:15",
+      address: "Herzog-Aosta-Straße, Bozen",
+      hoursShort: "Mo–Fr 7:30–20:00 · Sa 7:30–13:15",
     },
     admin: {
-      kicker: "Admin area",
-      tabMenu: "Daily menu",
-      tabRequests: "Catering inbox",
-      menuTitle: "Daily menu",
-      menuLead: "Add, edit or remove dishes. Changes are instant.",
-      requestsTitle: "Catering requests",
-      requestsLead: "Messages received from the Catering & Events form. Automatically deleted after 3 months.",
-      requestsEmpty: "No requests yet.",
-      logout: "Sign out",
-      addDish: "Add dish",
-      dishName: "Dish name",
-      dishDesc: "Description (optional)",
-      saved: "Saved",
-      deleted: "Deleted",
-      nameRequired: "Name is required",
-      markRead: "Mark as read",
-      archive: "Archive",
-      unarchive: "Reopen",
-      delete: "Delete",
-      status: { new: "New", read: "Read", archived: "Archived" },
-      eventDate: "Event date",
-      guests: "Guests",
-      message: "Message",
-      receivedOn: "Received on",
-      expiresIn: "Expires in",
-      days: "days",
+      kicker: "Admin-Bereich",
+      tabMenu: "Tagesmenü",
+      tabRequests: "Catering-Posteingang",
+      menuTitle: "Tagesmenü",
+      menuLead: "Gerichte hinzufügen, bearbeiten oder entfernen. Änderungen sind sofort live.",
+      requestsTitle: "Catering-Anfragen",
+      requestsLead:
+        "Über das Catering- & Eventformular empfangene Nachrichten. Werden automatisch nach 3 Monaten gelöscht.",
+      requestsEmpty: "Noch keine Anfragen vorhanden.",
+      logout: "Abmelden",
+      addDish: "Gericht hinzufügen",
+      dishName: "Name des Gerichts",
+      dishDesc: "Beschreibung (optional)",
+      saved: "Gespeichert",
+      deleted: "Gelöscht",
+      nameRequired: "Name ist erforderlich",
+      markRead: "Als gelesen markieren",
+      archive: "Archivieren",
+      unarchive: "Wieder öffnen",
+      delete: "Löschen",
+      status: { new: "Neu", read: "Gelesen", archived: "Archiviert" },
+      eventDate: "Event-Datum",
+      guests: "Gäste",
+      message: "Nachricht",
+      receivedOn: "Empfangen am",
+      expiresIn: "Läuft ab in",
+      days: "Tagen",
     },
   },
 } as const;
@@ -240,9 +290,9 @@ export const translations = {
 type DeepWiden<T> = T extends string
   ? string
   : T extends readonly (infer U)[]
-    ? readonly DeepWiden<U>[]
-    : T extends object
-      ? { readonly [K in keyof T]: DeepWiden<T[K]> }
-      : T;
+  ? readonly DeepWiden<U>[]
+  : T extends object
+  ? { readonly [K in keyof T]: DeepWiden<T[K]> }
+  : T;
 
 export type Dict = DeepWiden<typeof translations.it>;

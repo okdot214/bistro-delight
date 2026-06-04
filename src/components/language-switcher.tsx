@@ -9,7 +9,7 @@ export function LanguageSwitcher({
   size?: "sm" | "lg";
 }) {
   const { lang, setLang } = useLanguage();
-  const langs: Lang[] = ["it", "en"];
+  const langs: Lang[] = ["it", "de"];
 
   const base = size === "lg" ? "text-base px-4 py-2" : "text-xs px-3 py-1.5";
   const inactive =
@@ -21,9 +21,8 @@ export function LanguageSwitcher({
 
   return (
     <div
-      className={`inline-flex items-center gap-1 rounded-full border ${
-        variant === "light" ? "border-white/20" : "border-border"
-      }`}
+      className={`inline-flex items-center gap-1 rounded-full border ${variant === "light" ? "border-white/20" : "border-border"
+        }`}
       role="group"
       aria-label="Language"
     >
@@ -33,9 +32,8 @@ export function LanguageSwitcher({
           <button
             type="button"
             onClick={() => setLang(l)}
-            className={`${base} font-semibold tracking-wider uppercase rounded-full transition-colors ${
-              lang === l ? active : inactive
-            }`}
+            className={`${base} font-semibold tracking-wider uppercase rounded-full transition-colors ${lang === l ? active : inactive
+              }`}
             aria-pressed={lang === l}
           >
             {l}

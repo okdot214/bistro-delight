@@ -80,12 +80,13 @@ export function HorizontalSpecialties() {
 
       {/* Mobile/tablet: native horizontal scroll */}
       <div className="lg:hidden overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-        <div className="flex gap-6 px-6 pb-12">
+        <div className="flex gap-6 pl-6 pb-12">
           {items.map((it) => (
             <div key={it.title} className="snap-center flex-shrink-0 w-[82vw] max-w-md">
               <SpecialtyCard {...it} />
             </div>
           ))}
+          <div className="w-px flex-shrink-0" />
         </div>
       </div>
     </section>
